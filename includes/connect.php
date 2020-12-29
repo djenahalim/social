@@ -17,7 +17,7 @@ function findPeople($user,$conn){
                                    if (!$results) {
                                       throw new Exception('there is no result.');
                                    }
-                                   echo 'you have ' ;echo $results->num_rows; echo' result(s)';
+                                   echo 'You have ' ;echo $results->num_rows; echo' result(s)';
                                    if ($results->num_rows>0) {
                                      while($row = $results->fetch_assoc()) {
                                        echo "<br>";
@@ -33,9 +33,9 @@ function findPeople($user,$conn){
             $sql = "SELECT * from notes  where user_name='".$_SESSION['user']."'";
             $results = $conn->query($sql);
                                    if (!$results) {
-                                      throw new Exception('you have no notes.');
+                                      throw new Exception('You have no notes.');
                                    }
-                                   echo '<p id="num_notes" class="alert alert-dark">you have ' ;echo $results->num_rows; echo' note(s) :<p><br>';
+                                   echo '<p id="num_notes" class="alert alert-dark">You have ' ;echo $results->num_rows; echo' note(s) :<p><br>';
                                    if ($results->num_rows>0) {
                                      while($row = $results->fetch_assoc()) {
                                        echo "<br><p class='alert alert-warning'> " . $row["note"]. " </p>";
@@ -78,7 +78,7 @@ function messageSending($conn,$to,$message,$id){
             $sql = "SELECT * from users  where user_name='".$to."'";
             $results = $conn->query($sql);
                                    if (!$results) {
-                                      throw new Exception('cant send your message right now');
+                                      throw new Exception('cant send Your message right now');
                                    }
                                    if($results->num_rows==0){echo 'this user does not exist!';};
                                    if ($results->num_rows>0) {
@@ -99,7 +99,7 @@ function messageSending($conn,$to,$message,$id){
                                      $users_messaged="SELECT * from messages where sender='".$_SESSION['user']."' or reciever='".$_SESSION['user']."' " ;
                                      $users_m=$conn->query($users_messaged);
                                      if (!$users_m) {
-                                      throw new Exception("you haven't messaged anyone yet.");
+                                      throw new Exception("You haven't messaged anyone yet.");
 
                                    } else
                                   
@@ -110,7 +110,7 @@ function messageSending($conn,$to,$message,$id){
                                  $array=array_unique($array);
                                  $new_array = array_values($array);
                                  if($new_array==[]){
-                                  echo"<p id='no_messages' class='alert alert-danger'>you have not messaged anyone yet!</p>";
+                                  echo"<p id='no_messages' class='alert alert-danger'>You have not messaged anyone yet!</p>";
                                 }
                                  echo "<div class='row'>";
                                  echo "<div id='users_messaged' class='overflow-auto col-2'>";
@@ -201,7 +201,7 @@ function findAllPeople($conn){
                             throw new Exception('there is no result.');
                          }
                          echo "<div id='main_container'>";
-                         echo '<div id="contentDiv"><div id="results_num"> you have ' ;echo $results->num_rows; echo' result(s)</div><div id="people_grid">';
+                         echo '<div id="contentDiv"><div id="results_num"> You have ' ;echo $results->num_rows; echo' result(s)</div><div id="people_grid">';
                          if ($results->num_rows>0) {
                          
                         echo '<div class="container">';
@@ -230,7 +230,7 @@ function adv_people_search($conn,$sql){
      throw new Exception('there is no result.');
   }
   echo '<div id=main_container>';
-  echo '<div id="contentDiv"> <div id="num_results"> you have ' ;echo $results->num_rows; echo' result(s)</div>';
+  echo '<div id="contentDiv"> <div id="num_results"> You have ' ;echo $results->num_rows; echo' result(s)</div>';
   if ($results->num_rows>0) {
     echo '<div class="container">';
 
@@ -391,7 +391,7 @@ $conn->close();
 function friend_requested($conn){
   $sql = "SELECT * from friends_table  where accepted =0 and user_to='".$_SESSION['user']."' " ;
   $results = $conn->query($sql);
-  echo '<div> you have ' ;echo $results->num_rows; echo' friend requests</div>';
+  echo '<div> You have ' ;echo $results->num_rows; echo' friend requests</div>';
   $i=6;
   while($row = $results->fetch_assoc()) {
 
@@ -413,9 +413,9 @@ function friend_list($conn){
   $sql = "SELECT * from friends_table  where accepted =1 and (user_from='".$_SESSION['user']."' or user_to='".$_SESSION['user']."')" ;
   $results = $conn->query($sql);
   if (!$results) {
-     throw new Exception('there is no one in your friends list.');
+     throw new Exception('There is no one in your friends list.');
   }
-  echo '<div id="friends_num"> you have ' ;echo $results->num_rows; echo' friends(s)</div>';
+  echo '<div id="friends_num"> You have ' ;echo $results->num_rows; echo' friends(s)</div>';
   if ($results->num_rows>0) {
     echo '<div class="container">';
 
@@ -470,7 +470,7 @@ function friend_status($conn,$user,$other){
   while(($row = $results->fetch_assoc())&&$x<1) {
 
     if(($row["user_from"]==$_SESSION['user']&& $row["user_to"]==$other && $row["accepted"]==1)||($row["user_to"]==$_SESSION['user']&& $row["user_from"]==$other && $row["accepted"]==1)){
-      echo "<p class='alert alert-secondary col-3' id='friend_status'>you are friends</p>";$x=1;}
+      echo "<p class='alert alert-secondary col-3' id='friend_status'>You are friends</p>";$x=1;}
            else if  ($row["user_from"]==$_SESSION['user']&& $row["user_to"]==$other && $row["accepted"]==0){echo "<p class='alert alert-secondary col-3' id='friend_status'>a friend request has already been sent";$x=1;}
            else if  ($row["user_to"]==$_SESSION['user']&& $row["user_from"]==$other && $row["accepted"]==0){echo "<a href='/friends/accept_friend_request.php?user=$other' class='btn btn-success'>accept his/her friend request</a>";$x=1;}
          
@@ -521,7 +521,7 @@ function friend_status($conn,$user,$other){
       $results = $conn->query($sql);
   if (!$results) {
     throw new Exception('could not update your profile picture.');}else{
-     echo"<script>alert('your profile picture has been updated!'); history.back()</script>";
+     echo"<script>alert('Your profile picture has been updated!'); history.back()</script>";
      ;}
      };
      function upload_photo($file_new_name,$conn){
@@ -540,7 +540,7 @@ function friend_status($conn,$user,$other){
                              if (!$results) {
                                 throw new Exception('you have no photos.');
                              }
-                             echo 'you have ' ;echo $results->num_rows; echo' photos : <br>';
+                             echo 'You have ' ;echo $results->num_rows; echo' photos : <br>';
                              if ($results->num_rows>0) {
                               
                     
@@ -575,7 +575,7 @@ function friend_status($conn,$user,$other){
 $sql = "SELECT * from photos  where photos='".$image_id."'";
 $results = $conn->query($sql);
                              if (!$results) {
-                                throw new Exception('you cant see this photo.');
+                                throw new Exception('You cant see this photo.');
                              }else{
                                echo"<img src="."/images/uploads/".$image_id." alt="."picture"." id='image_preview' width='500' height='500'/>";;
                              }
@@ -599,7 +599,7 @@ $results = $conn->query($sql);
         $stmt= $conn->prepare($sql);
         $stmt->bind_param("sss",$_SESSION['user'],$text,$file_new_name);
         $stmt->execute();
-        echo"<script>alert('your post has been uploaded!');window.history.go(-2);</script>";
+        echo"<script>alert('Your post has been uploaded!');window.history.go(-2);</script>";
              $conn->close();
 
       }
@@ -689,7 +689,7 @@ $friendlist=[];
     $stmt= $conn->prepare($sql2);
     $stmt->bind_param("sss",$id, $comment,$_SESSION['user']);
     $stmt->execute();
-echo'<script>alert("your comment has been added")';
+echo'<script>alert("Your comment has been added")';
     $conn->close();
                      ;
 

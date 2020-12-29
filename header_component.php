@@ -74,7 +74,7 @@
        echo $user_name;?>
           </div>
  <div class="col-md-2">
-<a class="btn btn-danger mt-2 " id="logout" href="/logout.php">log out</a>
+<a class="btn btn-danger mt-2 " id="logout" href="/logout.php">Log out</a>
 
  </div>
 
