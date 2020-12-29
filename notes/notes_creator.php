@@ -3,7 +3,7 @@
 session_start();
 //include "header.php"; ?>
 
-<form action="/www/notes/notes_creation.php" method="post">
+<form action="/notes/notes_creation.php" method="post">
 <table style="border: 1px;">
 
 <td><textarea class="form-control" type="text" placeholder="write a note " name="note" size="255"

@@ -22,17 +22,17 @@ if (isset($_POST['submitp'])){
    
          }
          else {echo"<script>alert('file size is too big!')
-          window.location.href = '/www/home.php'</script>";
+          window.location.href = '/home.php'</script>";
         }
 
      }else {echo"<script>alert('there was an error while uploading your file')
-      window.location.href = '/www/home.php'</script>";};
+      window.location.href = '/home.php'</script>";};
 
     }else {echo"<script>alert('file extetion is not accepted')
-      window.location.href = '/www/home.php'</script>";
+      window.location.href = '/home.php'</script>";
      };
    
 }else{echo"<script>alert('you have not speciified a picture')
-  window.location.href = '/www/home.php'</script>";};
+  window.location.href = '/home.php'</script>";};
 
 ?>

@@ -8,7 +8,7 @@ myPhotos($conn);
 
 
 
-<form action="/www/images/photos_upload.php" method="post" enctype="multipart/form-data">
+<form action="/images/photos_upload.php" method="post" enctype="multipart/form-data">
 <div class="row">
     <div class="col-5">
 

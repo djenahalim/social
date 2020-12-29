@@ -8,6 +8,6 @@ $user=$_SESSION['user'];
 $conn=dataBase_connect();
 
 newNotes($conn,$note,$user);
-header('location:/www/notes/note_created.php');
+header('location:/notes/note_created.php');
 
 ?>

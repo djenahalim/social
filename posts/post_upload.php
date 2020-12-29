@@ -1,9 +1,9 @@
 <?php
-include ($_SERVER['DOCUMENT_ROOT']."\www\includes\header.php"); 
+include ($_SERVER['DOCUMENT_ROOT']."\includes\header.php"); 
 
 if (!isset($_POST['submit_post'])){
   echo"<script>alert('you have not specified a picture')
-  window.location.href = '/www/home.php'</script>";
+  window.location.href = '/home.php'</script>";
 }
 if (isset($_POST['submit_post'])){
   $text=$_POST['text'];
@@ -26,15 +26,15 @@ if (isset($_POST['submit_post'])){
    
          }
          else echo"<script>alert('file size is too big!')
-         window.location.href = '/www/home.php'</script>";;
+         window.location.href = '/home.php'</script>";;
 
      }else {echo"<script>alert('there was an error while uploading your file')
-      window.location.href = '/www/home.php'</script>";};
+      window.location.href = '/home.php'</script>";};
 
     }else {echo"<script>alert('you have not specified a picture or file extetion is not accepted')
-      window.location.href = '/www/home.php'</script>";};
+      window.location.href = '/home.php'</script>";};
    
 }else{echo"<script>alert('you have not specified a picture')
-  window.location.href = '/www/home.php'</script>";};
+  window.location.href = '/home.php'</script>";};
 
 ?>

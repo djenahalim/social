@@ -64,5 +64,5 @@ echo"</div>";echo"</div>";
 
 <script>
 $(document).ready(function(){$("#change_image").click(function(e){
-  e.preventDefault(); $("#contentDiv").load("/www/images/images.php")});});
+  e.preventDefault(); $("#contentDiv").load("/images/images.php")});});
  </script>

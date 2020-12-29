@@ -7,7 +7,7 @@
        
 
         <li class="nav-item">
-          <a class="nav-link" id="posts" href="\www\posts\my_posts.php">Posts</a> 
+          <a class="nav-link" id="posts" href="\posts\my_posts.php">Posts</a> 
         </li>
         
         <li class="nav-item">
@@ -17,7 +17,7 @@
           
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="find_friends" href=\www\people\search_people.php>Find New Friends</a> 
+          <a class="nav-link" id="find_friends" href=\people\search_people.php>Find New Friends</a> 
         </li>
         <li class="nav-item">
           <a class="nav-link" id="view_profile" href="">Profile</a> 
@@ -47,29 +47,29 @@
 <!-- veiw  profile-->
 <script>
 $(document).ready(function(){$("#view_profile").click(function(e){
-  e.preventDefault(); $("#contentDiv").load("/www/myprofile.php")});});
+  e.preventDefault(); $("#contentDiv").load("/myprofile.php")});});
  </script>
  <!-- notes -->
  <script>
 $(document).ready(function(){$("#view_notes").click(function(e){
-  e.preventDefault(); $("#contentDiv").load("/www/notes/notes_finder.php")});});
+  e.preventDefault(); $("#contentDiv").load("/notes/notes_finder.php")});});
  </script>
 <!-- photos -->
 <script>
 $(document).ready(function(){$("#my_photos").click(function(e){
-  e.preventDefault(); $("#contentDiv").load("/www/images/my_photos.php")});});
+  e.preventDefault(); $("#contentDiv").load("/images/my_photos.php")});});
  </script>
 
 <!-- friend list -->
 <script>
 $(document).ready(function(){$("#view_friends").click(function(e){
-  e.preventDefault(); $("#contentDiv").load("/www/friends/friendlist.php")});});
+  e.preventDefault(); $("#contentDiv").load("/friends/friendlist.php")});});
  </script>
 
     <!-- age calculator -->
     <script>
 $(document).ready(function(){$("#age_calculator").click(function(e){
-  e.preventDefault(); $("#contentDiv").load("/www/age_calculator/age_calculator.php")});});
+  e.preventDefault(); $("#contentDiv").load("/age_calculator/age_calculator.php")});});
  </script>
   <!-- images -->
  

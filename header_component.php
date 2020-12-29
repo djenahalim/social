@@ -2,15 +2,15 @@
 <header>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-<link href="/www/css/style.css" rel="stylesheet"> 
-<link href="/www/css/bootstrap.min.css" rel="stylesheet"> 
-<script src="/www/js/bootstrap.min.js"> </script>
+<link href="/css/style.css" rel="stylesheet"> 
+<link href="/css/bootstrap.min.css" rel="stylesheet"> 
+<script src="/js/bootstrap.min.js"> </script>
 <!-- search for people -->
 <script type="text/javascript">
       $(function() {
         $("#lets_search").bind('submit',function() {
           var value = $('#str').val();
-           $.post('/www/people/find_user.php',{value:value}, function(data){
+           $.post('/people/find_user.php',{value:value}, function(data){
              $("#contentDiv").html(data);
            });
            return false;
@@ -26,7 +26,7 @@
     
     <div class="col-md-1  ">
         <?php
-            echo"<img src=/www/default_p_pic/logo.png id='logo' alt="."logo"." width='50' height='50' />";?>
+            echo"<img src=/default_p_pic/logo.png id='logo' alt="."logo"." width='50' height='50' />";?>
         </div>
     <div class="col-md-4 ps-1 ">
           <div class="container-fluid">
@@ -47,15 +47,15 @@
         
 
         <li class="nav-item">
-        <a class="nav-link" href="\www\home.php"><img src="/www/default_p_pic/home.svg" alt= home width='32' height='32'></a> 
+        <a class="nav-link" href="\home.php"><img src="/default_p_pic/home.svg" alt= home width='32' height='32'></a> 
         </li>
         
         <li class="nav-item">
-        <a class="nav-link" href=\www\messages\messages.php><img src="/www/default_p_pic/message.svg" width='32' height='32' alt= Messages></a> 
+        <a class="nav-link" href=\messages\messages.php><img src="/default_p_pic/message.svg" width='32' height='32' alt= Messages></a> 
         </li>
        
         <li class="nav-item">
-        <a class="nav-link" id="view_friends" href=""><img src="/www/default_p_pic/people.svg" width='32' height='32' alt= friendlist> </a> 
+        <a class="nav-link" id="view_friends" href=""><img src="/default_p_pic/people.svg" width='32' height='32' alt= friendlist> </a> 
         </li>
         
       </ul>
@@ -74,7 +74,7 @@
        echo $user_name;?>
           </div>
  <div class="col-md-2">
-<a class="btn btn-danger mt-2 " id="logout" href="/www/logout.php">log out</a>
+<a class="btn btn-danger mt-2 " id="logout" href="/logout.php">log out</a>
 
  </div>
 

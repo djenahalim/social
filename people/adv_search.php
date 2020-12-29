@@ -3,7 +3,7 @@ include "../includes/header.php";
 include "../header_component.php";
 include "../nav_link.php";
 if(!isset($_POST['send'])){
-    header('Location: /www/people/search_people.php');
+    header('Location: /people/search_people.php');
 }
 else{
 $age=$_POST['age'];

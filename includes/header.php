@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if (!isset($_SESSION['user'])){header('location:/www/index.php');}else{
+if (!isset($_SESSION['user'])){header('location:/index.php');}else{
 
 
 include "connect.php";

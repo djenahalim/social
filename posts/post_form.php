@@ -1,4 +1,4 @@
-<form action="/www/posts/post_upload.php" method="post" id="post_form"  enctype="multipart/form-data">
+<form action="/posts/post_upload.php" method="post" id="post_form"  enctype="multipart/form-data">
 <div class="col-5 ">
 <textarea class="form-control ms-5 mb-4" placeholder="whats in your mind?" rows="4" cols="44" size="255" name="text"></textarea>
 </div>

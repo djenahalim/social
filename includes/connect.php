@@ -22,7 +22,7 @@ function findPeople($user,$conn){
                                      while($row = $results->fetch_assoc()) {
                                        echo "<br>";
                                        user_template($conn,$row["user_name"]);
-                                       echo "<br>  <a href='/www/friends/send_friend_request.php?user=".$row["user_name"]." '><button class='btn btn-primary'>send a friend request</button><br></a>   ";
+                                       echo "<br>  <a href='/friends/send_friend_request.php?user=".$row["user_name"]." '><button class='btn btn-primary'>send a friend request</button><br></a>   ";
                                      }
                                    } ;
           
@@ -48,7 +48,7 @@ function loginRequest($conn,$usern,$pass){
             $sql = "SELECT * from users  where user_name='".$usern."' and user_pass = '".$pass."'";
             $results = $conn->query($sql);
                                    if (!$results) {
-                                      header('location:/www/wrong_inf.php');
+                                      header('location:/wrong_inf.php');
                                     
                                    }
          
@@ -59,7 +59,7 @@ function loginRequest($conn,$usern,$pass){
          echo"<script>window.open('home.php','_self' )</script>";
         
                                    } else {
-                                    header('location:/www/wrong_inf.php');};
+                                    header('location:/wrong_inf.php');};
          
          };
  function online($conn){
@@ -88,7 +88,7 @@ function messageSending($conn,$to,$message,$id){
                 $stmt= $conn->prepare($sql2);
                 $stmt->bind_param("ssss",$id, $_SESSION['user'],$to, $message);
                 $stmt->execute();
-                header('location:/www/messages/message_sent.php');
+                header('location:/messages/message_sent.php');
                 $conn->close();
           
                                     
@@ -119,7 +119,7 @@ function messageSending($conn,$to,$message,$id){
                                   
                                   echo' <script>
                                   $(document).ready(function(){$("#'.$new_array[$x].'").click(function(e){
-                                    e.preventDefault(); $("#contentDiv").load("/www/messages/user_messages.php?message='.$new_array[$x].'")})});
+                                    e.preventDefault(); $("#contentDiv").load("/messages/user_messages.php?message='.$new_array[$x].'")})});
                                    </script>';
                                    echo"<div id=template>";
                                    echo"<li>";
@@ -188,7 +188,7 @@ function messageSending($conn,$to,$message,$id){
                                                           $conn->close();
                                                           echo' <script>
                                                           $(document).ready(function(){$("#add_note_btn").click(function(e){
-                                                            e.preventDefault(); $("#contentDiv").load("/www/notes/note_created.php")});});
+                                                            e.preventDefault(); $("#contentDiv").load("/notes/note_created.php")});});
                                                            </script>';
                                                           
                                                           
@@ -447,7 +447,7 @@ function send_friend_request($conn,$user){
   $results = $conn->query($sql);
   if (!$results) {
      throw new Exception('could not send a friend request.');}else{
-      header('location:/www/friends/friend_request_sent.php');
+      header('location:/friends/friend_request_sent.php');
      
      };
 
@@ -458,7 +458,7 @@ function accept_friend_request($conn,$user){
   $results = $conn->query($sql);
   if (!$results) {
     throw new Exception('could not accept the friend request.');}else{
-      header('location:/www/friends/friend_request_accepted.php');
+      header('location:/friends/friend_request_accepted.php');
      
     };
   
@@ -472,10 +472,10 @@ function friend_status($conn,$user,$other){
     if(($row["user_from"]==$_SESSION['user']&& $row["user_to"]==$other && $row["accepted"]==1)||($row["user_to"]==$_SESSION['user']&& $row["user_from"]==$other && $row["accepted"]==1)){
       echo "<p class='alert alert-secondary col-3' id='friend_status'>you are friends</p>";$x=1;}
            else if  ($row["user_from"]==$_SESSION['user']&& $row["user_to"]==$other && $row["accepted"]==0){echo "<p class='alert alert-secondary col-3' id='friend_status'>a friend request has already been sent";$x=1;}
-           else if  ($row["user_to"]==$_SESSION['user']&& $row["user_from"]==$other && $row["accepted"]==0){echo "<a href='/www/friends/accept_friend_request.php?user=$other' class='btn btn-success'>accept his/her friend request</a>";$x=1;}
+           else if  ($row["user_to"]==$_SESSION['user']&& $row["user_from"]==$other && $row["accepted"]==0){echo "<a href='/friends/accept_friend_request.php?user=$other' class='btn btn-success'>accept his/her friend request</a>";$x=1;}
          
     }
-    if ($x==0){echo "<a href='/www/friends/send_friend_request.php?user=$other' class='btn btn-secondary '>send a friend request</a>";};
+    if ($x==0){echo "<a href='/friends/send_friend_request.php?user=$other' class='btn btn-secondary '>send a friend request</a>";};
 
   };
   function profile_pic($conn){
@@ -488,7 +488,7 @@ function friend_status($conn,$user,$other){
                                    }else{
       while($row = $results->fetch_assoc()) {
        $userpic=$row['user_image'];
-       echo "<img src=/www/images/uploads/".$userpic." id='p_photo' class=rounded-circle alt="."profile pic"." width='60' height='60' />";
+       echo "<img src=/images/uploads/".$userpic." id='p_photo' class=rounded-circle alt="."profile pic"." width='60' height='60' />";
 
   }
   
@@ -512,7 +512,7 @@ function friend_status($conn,$user,$other){
       while($row = $results->fetch_assoc()) {
         $userpic=$row['user_image'];
      
-     echo "<img src="."/www/images/uploads/".$userpic." alt="."picture"." width='100' height='100'/> ";
+     echo "<img src="."/images/uploads/".$userpic." alt="."picture"." width='100' height='100'/> ";
      }};
   
     function update_profile_pic($file_new_name,$conn){
@@ -558,10 +558,10 @@ function friend_status($conn,$user,$other){
                                  echo "<div class='photos'>";
                                   echo' <script>
                                   $(document).ready(function(){$("#'.$img_name.'").click(function(e){
-                                    e.preventDefault(); $("#contentDiv").load("/www/images/photo_preview.php?image_id='.$row["photos"].'")})});
+                                    e.preventDefault(); $("#contentDiv").load("/images/photo_preview.php?image_id='.$row["photos"].'")})});
                                    </script>';
                                  
-                                   echo "<a id=".$img_name." href=''"."><img src="."/www/images/uploads/".$row['photos']." alt="."picture"." width='100' height='100'/></a>";
+                                   echo "<a id=".$img_name." href=''"."><img src="."/images/uploads/".$row['photos']." alt="."picture"." width='100' height='100'/></a>";
                                   if($i==6){echo"</div>";}
                                    echo"</div>";
                                   echo"</div>";
@@ -577,7 +577,7 @@ $results = $conn->query($sql);
                              if (!$results) {
                                 throw new Exception('you cant see this photo.');
                              }else{
-                               echo"<img src="."/www/images/uploads/".$image_id." alt="."picture"." id='image_preview' width='500' height='500'/>";;
+                               echo"<img src="."/images/uploads/".$image_id." alt="."picture"." id='image_preview' width='500' height='500'/>";;
                              }
      }
   
@@ -587,10 +587,10 @@ $results = $conn->query($sql);
       $results = $conn->query($sql);
       while($row = $results->fetch_assoc()) {
         echo"<div id='profile_pic'>";
-        echo "<img src=/www/images/uploads/".$row['user_image']." id=pic alt="."picture"." width='100' height='100'/>";
+        echo "<img src=/images/uploads/".$row['user_image']." id=pic alt="."picture"." width='100' height='100'/>";
         echo"</div>";
         echo"<div id='user_inf' >";
-       echo  "<a ".'href="/www/profiles.php?user='.$row['user_name'].'"'."id=user_name>" .$row['user_name']."</a>,&nbsp" .$row['user_age']." ";
+       echo  "<a ".'href="/profiles.php?user='.$row['user_name'].'"'."id=user_name>" .$row['user_name']."</a>,&nbsp" .$row['user_age']." ";
        echo"</div>";
         ;};}
     
@@ -660,19 +660,19 @@ $friendlist=[];
      echo "</div>";
      echo "</div>";
      echo "<div id='post_image'>";
-     echo"<img src="."/www/posts/uploads/".$post_image." alt="."picture"." width='500' height='500'/>" ;
+     echo"<img src="."/posts/uploads/".$post_image." alt="."picture"." width='500' height='500'/>" ;
      echo "</div>";
-    echo'<form action="/www/posts/like.php" method="post" enctype="multipart/form-data">
+    echo'<form action="/posts/like.php" method="post" enctype="multipart/form-data">
     <input type="hidden" id="id" name="post_id" value="'.$id.'">
-    <button type="submit" id="like_button" name="like" class="btn" ><img src="/www/default_p_pic/like.png"  width="40" height="40"></button>'.$post_likes.'
+    <button type="submit" id="like_button" name="like" class="btn" ><img src="/default_p_pic/like.png"  width="40" height="40"></button>'.$post_likes.'
     </form>';
     
     echo'<script>
     $(document).ready(function(){$("#comment_'.$id.'").click(function(e){
-      e.preventDefault(); $("#contentDiv").load("/www/posts/make_comment.php")})});
+      e.preventDefault(); $("#contentDiv").load("/posts/make_comment.php")})});
      </script>';
 
-     echo '<form id="comment_form" method="post" action="/www/posts/make_comment.php">
+     echo '<form id="comment_form" method="post" action="/posts/make_comment.php">
      <div class="tooltip-bg" id="comment">
       <div class="tip"></div> 
     <input type="text" placeholder="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp comment here" id="speech-input"  name="comment"  size="100"></div>
