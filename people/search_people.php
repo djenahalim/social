@@ -25,21 +25,21 @@ findAllPeople($conn);
 </div>
 <div class="form-check">
 <input class="form-check-input" type="radio" id="female" name="gender" value="female" >
-<label class="form-check-label" for="female">female</label>
+<label class="form-check-label" for="female">Female</label>
 </div></div>
 
 
 <div class='col-2 pe-0'>
 <div class="form-check">
  <input type="checkbox" class="form-check-input" name="photo">
- <label for="photo" class="form-check-label" >with photo only</label>
+ <label for="photo" class="form-check-label" >With photo only</label>
  </div>
  </div>
 
  <div class=col-1>
  <div class="form-check">
  <input type="checkbox" class="form-check-input"  name="isonline">
- <label for="isonline" class="form-check-label">online</label>
+ <label for="isonline" class="form-check-label">Online</label>
  </div></div>
 
  <div class=col-3>
@@ -298,7 +298,7 @@ findAllPeople($conn);
 </select>
 </div>
 <div class=col-3>
-<input type="submit" value="search" class="btn btn-primary" name="send" id="send">
+<input type="submit" value="Search" class="btn btn-primary" name="send" id="send">
 </form>
 </div></div>
 </div></div>
