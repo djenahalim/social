@@ -86,21 +86,27 @@ li{
 }
 
 /* main container */
-#main_container{
-    min-height: 83.4%;
-    background-color: #f4f4f4;
-    padding:20;
-    padding-top: 0;
-}
+
+    #main_container{
+        height: 83.8%;
+        
+        background-color: #f4f4f4;
+        padding:20;
+        padding-top: 0;
+        padding-bottom: 5;
+    }
+
+
 
 /* contentDiv */
 #contentDiv{
-    min-height: 80%;
+    height: auto;
+    min-height: 100%;
     padding:20;
     border-radius: 25px;
-  border: 10px solid #f4f4f4;
+  border: 0px solid #f4f4f4;
   ;
-    height: auto;
+   
     background-image: linear-gradient(to bottom right, rgb(160, 179, 243), rgb(190, 221, 240));
 }
 /* pages */
@@ -224,7 +230,16 @@ li{
  /* find people */
 #people_search_form{
     margin-left: 10%;
-    margin-bottom: 8%;
+    margin-bottom: 1%;
+
+}
+@media (min-height :700px ){
+    #people_search_form{
+       
+        margin-left: 10%;
+        margin-bottom: 5%;
+      
+    }
 
 }
 #results_num{
