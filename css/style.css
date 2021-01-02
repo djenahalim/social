@@ -183,6 +183,7 @@ li {
   width: 95%;
   margin-top: -14px;
   padding-left: 4%;
+  padding-bottom: 0px;
 }
 
 .tip {
@@ -208,7 +209,7 @@ input:focus {
 }
 
 #submit {
-  margin-top: 1%;
+  margin-top: 10px;
   margin-left: 65%;
 }
 
