@@ -1,5 +1,5 @@
 <?php
-include ($_SERVER['DOCUMENT_ROOT']."\includes\header.php"); 
+include ("..\includes\header.php"); 
 
 if (!isset($_POST['submit_post'])){
   echo"<script>alert('you have not specified a picture')
