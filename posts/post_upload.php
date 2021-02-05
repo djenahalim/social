@@ -23,8 +23,8 @@ if (isset($_POST['submit_post'])){
        $file_destination='uploads/'.$file_new_name;
       
         upload_post($file_new_name,$conn,$text);
-        echo'sss';
-  /*      move_uploaded_file($file_Tmp_name,$file_destination);  */
+       
+      move_uploaded_file($file_Tmp_name,$file_destination);  
    
          }
          else echo"<script>alert('file size is too big!')
