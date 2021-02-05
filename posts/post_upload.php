@@ -21,8 +21,9 @@ if (isset($_POST['submit_post'])){
          if($file_size<10000000){
        $file_new_name=uniqid('',true).".".$file_actual_ext;
        $file_destination='uploads/'.$file_new_name;
-       upload_post($file_new_name,$conn,$text);
-       move_uploaded_file($file_Tmp_name,$file_destination);
+       echo'sss';
+      /*  upload_post($file_new_name,$conn,$text);
+       move_uploaded_file($file_Tmp_name,$file_destination); */
    
          }
          else echo"<script>alert('file size is too big!')
