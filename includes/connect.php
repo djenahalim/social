@@ -596,13 +596,13 @@ $results = $conn->query($sql);
     
       function upload_post($file_new_name,$conn,$text){
         echo'xxx';
-        /* $sql="INSERT into posts(user_name,post_text,post_image) values (?,?,?) ;";
+        $sql="INSERT into posts(user_name,post_text,post_image) values (?,?,?) ;";
         $stmt= $conn->prepare($sql);
         $stmt->bind_param("sss",$_SESSION['user'],$text,$file_new_name);
         $stmt->execute();
         echo"<script>alert('Your post has been uploaded!');window.history.go(-2);</script>";
              $conn->close();
- */
+
       }
       function veiw_posts($conn){
       $sql="SELECT * from friends_table  where accepted =1 and (user_from='".$_SESSION['user']."' or user_to='".$_SESSION['user']."')";
