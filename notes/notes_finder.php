@@ -1,6 +1,6 @@
 
 <?php
-
+//finds and shows all your notes
 
 echo'<script>
 $(document).ready(function(){$("#create_note").click(function(e){

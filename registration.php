@@ -1,4 +1,5 @@
 <?php
+//handle registration form request
 include  "includes/connect.php";
 $usern = htmlentities(mysqli_real_escape_string($conn,$_POST['username'])) ;
 $pass=htmlentities(mysqli_real_escape_string($conn,$_POST['password'])) ;

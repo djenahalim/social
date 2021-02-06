@@ -1,12 +1,18 @@
 <?php
 include "../includes/header.php";
 
+
 if (!isset($_POST['submit_post'])){
   echo"<script>alert('you have not specified a picture')
   window.location.href = '/home.php'</script>";
 }
 if (isset($_POST['submit_post'])){
+
   $text=$_POST['text'];
+  if (is_uploaded_file($_FILES['file']['tmp_name']) ==false && isset($_POST['text'])){
+    $file_new_name=null;
+    upload_post($file_new_name,$conn,$text);}
+  else{
     $file=$_FILES['file'];
     $file_name=$file['name'];
     $file_Tmp_name=$file['tmp_name'];
@@ -36,7 +42,7 @@ if (isset($_POST['submit_post'])){
 
     }else {echo"<script>alert('you have not specified a picture or file extetion is not accepted')
       window.location.href = '/home.php'</script>";};
-   
+    }
 }else{echo"<script>alert('you have not specified a picture')
   window.location.href = '/home.php'</script>";};
 

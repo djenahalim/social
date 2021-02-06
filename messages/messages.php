@@ -1,5 +1,6 @@
 
 <?php
+//shows the people you messaged
 include "../includes/header.php";
 include "../header_component.php";
 include "../nav_link.php";

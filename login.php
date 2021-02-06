@@ -1,4 +1,5 @@
 <?php
+//handles login request
 include "includes/connect.php";
 
 

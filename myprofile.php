@@ -1,5 +1,5 @@
 <?php
-
+//shows your profile details
 include "includes/header.php";
 echo"<div class='container ' >
      <div class='row '>

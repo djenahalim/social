@@ -1,4 +1,5 @@
 <?php
+//shows my photos
 include "../includes/header.php";
 
 myPhotos($conn);

@@ -1,4 +1,5 @@
 <?php 
+//saves the sent message in the database
 include "../includes/header.php";
 if (!isset($_SESSION['user'])){header('location:/home.php');};
 

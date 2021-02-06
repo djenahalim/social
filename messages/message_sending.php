@@ -1,5 +1,6 @@
 
 <?php
+//handles send message
 session_start();
 include("../includes/connect.php");
 $to=$_POST['to'];

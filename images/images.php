@@ -1,4 +1,5 @@
 <?php
+//upload image form
 include "../includes/header.php";
 
 ?>

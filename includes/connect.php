@@ -58,6 +58,8 @@ function loginRequest($conn, $usern, $pass)
 
 //logs out the user
 
+
+
 function disconnect($conn)
 {
   $sql = "UPDATE users SET isonline= '0' where user_name='" . $_SESSION['user'] . "';";
@@ -66,6 +68,8 @@ function disconnect($conn)
   session_destroy();
 };
 
+
+
 //puts the user in an online status
 function online($conn)
 {
@@ -73,6 +77,9 @@ function online($conn)
   $stmt = $conn->prepare($sql);
   $stmt->execute();
 };
+
+
+
 
 
 //handles message sending
@@ -97,6 +104,8 @@ function messageSending($conn, $to, $message, $id)
     $conn->close();
   };
 };
+
+
 
 
 //finds all the messages you have sent or been sent to you
@@ -152,6 +161,8 @@ $(document).ready(function(){$("#' . $new_array[$x] . '").click(function(e){
   }
 }
 
+
+
 //this funtion shows your conversation with a user after you click on their template
 function user_messages($userm, $conn)
 {
@@ -195,6 +206,10 @@ function user_messages($userm, $conn)
   echo "</div>";
   echo "</div>";
 };
+
+
+
+
 //find a person using the search bar
 function findPeople($user, $conn)
 {
@@ -215,6 +230,9 @@ function findPeople($user, $conn)
     }
   };
 };
+
+
+
 //finds all the notes that you wrote and shows them
 function findNotes($conn)
 {
@@ -233,6 +251,8 @@ function findNotes($conn)
   };
 };
 
+
+
 //inserting the new note into the database after pressing create note
 function newNotes($conn, $note, $user)
 {
@@ -246,6 +266,9 @@ function newNotes($conn, $note, $user)
        e.preventDefault(); $("#contentDiv").load("/notes/note_created.php")});});
         </script>';
 };
+
+
+
 //shows templates of people who are registred to the website
 function findAllPeople($conn)
 {
@@ -281,6 +304,10 @@ function findAllPeople($conn)
     };
   };
 };
+
+
+
+
 //finds and shows the result of people those details corresponds to
 function adv_people_search($conn, $sql)
 {
@@ -314,6 +341,8 @@ function adv_people_search($conn, $sql)
   }
   echo "</div>";
 }
+
+
 
 
 //showing a users profile after you click on a persons template
@@ -353,6 +382,9 @@ function veiwProfile($conn, $userp)
     }
   };
 };
+
+
+
 //calculates the age of  a user using his date of birth
 function age_calculator($user_birthday)
 {
@@ -396,6 +428,10 @@ function age_calculator($user_birthday)
     return $age;
   }
 }
+
+
+
+
 //finds someones age using his date of birth
 function age_years($user_birthday)
 {
@@ -427,6 +463,8 @@ function age_years($user_birthday)
   }
 }
 
+
+
 //inserting the users age in the database
 function insert_age($conn, $age)
 {
@@ -435,6 +473,8 @@ function insert_age($conn, $age)
   $stmt->execute();
   $conn->close();
 };
+
+
 
 //finds all people who send you a friend request
 function friend_requested($conn)
@@ -462,6 +502,9 @@ function friend_requested($conn)
     echo "</div>";
   };
 }
+
+
+
 //finds all people in your friend list
 function friend_list($conn)
 {
@@ -501,6 +544,8 @@ function friend_list($conn)
     };
   };
 };
+
+
 //send a friend request to someone
 function send_friend_request($conn, $user)
 {
@@ -512,6 +557,9 @@ function send_friend_request($conn, $user)
     header('location:/friends/friend_request_sent.php');
   };
 };
+
+
+
 //accept a friend request
 function accept_friend_request($conn, $user)
 {
@@ -525,6 +573,9 @@ function accept_friend_request($conn, $user)
 }
 /*  shows in other users profile the status of your friendship:
 (already friends,not friends,fried request sent or he sent you a friend request...)*/
+
+
+
 function friend_status($conn, $user, $other)
 {
   $sql = "SELECT * from friends_table  where user_from='" . $_SESSION['user'] . "' or user_to='" . $_SESSION['user'] . "'";
@@ -548,6 +599,9 @@ function friend_status($conn, $user, $other)
   };
 };
 
+
+
+
 //generates a small picture for your profile
 function profile_pic($conn)
 {
@@ -564,6 +618,9 @@ function profile_pic($conn)
     }
   };
 };
+
+
+
 //finds your profile picture
 function find_profile_pic($conn)
 {
@@ -579,6 +636,9 @@ function find_profile_pic($conn)
     }
   };
 };
+
+
+
 //generates other peoples user pictures
 function user_pic($conn, $user)
 {
@@ -590,6 +650,9 @@ function user_pic($conn, $user)
     echo "<img src=" . "/images/uploads/" . $userpic . " alt=" . "picture" . " width='100' height='100'/> ";
   }
 };
+
+
+
 //update your profile picture
 function update_profile_pic($file_new_name, $conn)
 {
@@ -602,6 +665,9 @@ function update_profile_pic($file_new_name, $conn)
     echo "<script>alert('Your profile picture has been updated!'); history.back()</script>";;
   }
 };
+
+
+
 //upload a photo to my photos
 function upload_photo($file_new_name, $conn)
 {
@@ -612,6 +678,9 @@ function upload_photo($file_new_name, $conn)
   echo "<script>alert('your picture has been uploaded!');window.history.go(-2);</script>";
   $conn->close();
 };
+
+
+
 //shows all your photos
 function myPhotos($conn)
 {
@@ -652,6 +721,9 @@ function myPhotos($conn)
     }
   };
 }
+
+
+
 // shows the full size of a photo after you chose one
 function preview_photo($conn, $image_id)
 {
@@ -664,6 +736,8 @@ function preview_photo($conn, $image_id)
     echo "<img src=" . "/images/uploads/" . $image_id . " alt=" . "picture" . " id='image_preview' width='500' height='500'/>";;
   }
 }
+
+
 
 //generates a user template
 function user_template($conn, $user)
@@ -679,6 +753,9 @@ function user_template($conn, $user)
     echo "</div>";;
   };
 }
+
+
+
 //upload a post
 function upload_post($file_new_name, $conn, $text)
 {
@@ -689,6 +766,9 @@ function upload_post($file_new_name, $conn, $text)
   echo "<script>alert('Your post has been uploaded!');window.location.replace('/posts/view_my_posts.php');</script>";
   $conn->close();
 }
+
+
+
 //veiw all posts your friends have shared
 function veiw_posts($conn)
 {
@@ -725,6 +805,10 @@ function veiw_posts($conn)
     }
   }
 };
+
+
+
+
 //veiw all the post that you have shared
 function veiw_my_posts($conn)
 {
@@ -738,6 +822,9 @@ function veiw_my_posts($conn)
     }
   };
 };
+
+
+
 // generates a single post
 function post($conn, $id)
 {
@@ -762,9 +849,11 @@ function post($conn, $id)
     echo $post_text;
     echo "</div>";
     echo "</div>";
+    //checks if the the post have an image
+    if($post_image<>null){
     echo "<div id='post_image'>";
     echo "<img src=" . "/posts/uploads/" . $post_image . " alt=" . "picture" . " width='500' height='500'/>";
-    echo "</div>";
+    echo "</div>";};
     //shows a like button and the number of likes
     echo '<form action="/posts/like.php" method="post" enctype="multipart/form-data">
     <input type="hidden" id="id" name="post_id" value="' . $id . '">
@@ -788,6 +877,9 @@ function post($conn, $id)
   }
 }
 //handles add comment
+
+
+
 function add_comment($conn, $id, $comment)
 {
   $sql2 = "INSERT into posts_comments(id,comments,user_name) values(?,?,?);";
@@ -800,6 +892,9 @@ function add_comment($conn, $id, $comment)
   $conn->close();;
 }
 //shows all the comments
+
+
+
 function veiw_coments($conn, $id)
 {
   $sql = "SELECT * from posts_comments where id=$id";
@@ -810,6 +905,9 @@ function veiw_coments($conn, $id)
     }
   }
 }
+
+
+
 //handdles when you click on like button
 function like($conn, $id)
 {

@@ -282,7 +282,7 @@ maxlength="24" />
        min="1900-01-01" max="2018-12-31">
 
 <select name="gender" class="form-select mb-3 ms-5" aria-label="Default select example" id="gender">
-  <option value="Male">Male</option>
+  <option value="male">Male</option>
   <option value="female">Female</option>
 </select>
 

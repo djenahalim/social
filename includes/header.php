@@ -1,4 +1,6 @@
 <?php 
+//this file is included in all the pages after the user signs in,it creates a session and holds the variables to 
+//be used in the pages
 session_start();
 if (!isset($_SESSION['user'])){header('location:/index.php');}else{
 

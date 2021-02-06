@@ -1,4 +1,5 @@
 <?php
+//hundles upload the profile picture
 include "../includes/header.php";
 
 if (isset($_POST['submit'])){

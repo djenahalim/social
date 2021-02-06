@@ -1,5 +1,6 @@
 
 <?php
+//create note form
 session_start();
 //include "header.php"; ?>
 

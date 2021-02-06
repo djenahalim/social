@@ -1,4 +1,5 @@
 <?php 
+//shows people and the form to search for people
 include "../includes/header.php";
 include "../header_component.php";
 include "../nav_link.php";

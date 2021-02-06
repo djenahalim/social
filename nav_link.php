@@ -1,7 +1,7 @@
+ <?php
+  //navigation link
+ echo'
 
-
- <?php  echo'
- 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
  
  <ul id="nav_link" class="navbar-nav  ">

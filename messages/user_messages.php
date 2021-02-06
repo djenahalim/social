@@ -1,4 +1,5 @@
 <?php 
+//shows messages of a user
 include "../includes/header.php";
 $userm= $_GET['message'];
 

@@ -1,4 +1,5 @@
 <?php 
+//shows note created alert
 include "../includes/header.php";
 if (!isset($_SESSION['user'])){header('location:/home.php');};
 

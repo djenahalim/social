@@ -1,4 +1,5 @@
 <?php 
+//alerts that the friend request has been sent 
 include "../includes/header.php";
 if (!isset($_SESSION['user'])){header('location:/home.php');};
 
