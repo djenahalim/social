@@ -8,11 +8,11 @@
        
 
         <li class="nav-item">
-          <a class="nav-link" id="posts" href="\posts\my_posts.php">Posts</a> 
+          <a class="nav-link" id="posts" href="\posts\my_posts.php">My friends posts</a> 
         </li>
 
         <li class="nav-item">
-        <a class="nav-link" id="my_posts" href="\posts\view_my_posts.php">View my posts</a> 
+        <a class="nav-link" id="my_posts" href="\posts\view_my_posts.php">My posts</a> 
       </li>
 
         <li class="nav-item">
