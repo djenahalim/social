@@ -183,7 +183,7 @@ function user_messages($userm, $conn)
           echo "<p class='alert alert-dark col-4' id='sender'> " . $row["message"] . " <br> <p id='at_s'> at   " . $row["timestamp"] . " </p></p>";
         };
         if ($row["reciever"] == $_SESSION['user']) {
-          echo "<p class='alert alert-success col-5' id='reciever'> " . $row["message"] . " <br>  at <p id='at'>  " . $row["timestamp"] . "</p></p>";
+          echo "<p class='alert alert-success col-5' id='reciever'> " . $row["message"] . " <br>  <p id='at'> at " . $row["timestamp"] . "</p></p>";
         }
       };
     }
