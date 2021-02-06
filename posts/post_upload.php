@@ -30,8 +30,7 @@ if (isset($_POST['submit_post'])){
 
 
         upload_post($file_new_name,$conn,$text);
-       
-      move_uploaded_file($file_Tmp_name,$file_destination);  
+        move_uploaded_file($file_Tmp_name,$file_destination);  
    
          }
          else echo"<script>alert('file size is too big!')
