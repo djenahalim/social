@@ -12,7 +12,7 @@
         </li>
 
         <li class="nav-item">
-        <a class="nav-link" id="my_posts" href="\posts\view_my_posts.php">My posts</a> 
+        <a class="nav-link ms-2" id="my_posts" href="\posts\view_my_posts.php">My posts</a> 
       </li>
 
         <li class="nav-item">
