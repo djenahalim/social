@@ -1,30 +1,31 @@
 
 
  <?php  echo'
- <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
- <div class="container-fluid" id="nav_container">
- <ul id="nav_link" class="navbar-nav me-auto mb-2 mb-lg-0">
+ 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+ <ul id="nav_link" class="navbar-nav  ">
        
 
         <li class="nav-item">
           <a class="nav-link" id="posts" href="\posts\my_posts.php">Posts</a> 
         </li>
-        
+
+        <li class="nav-item">
+        <a class="nav-link" id="posts" href="\posts\view_my_posts.php">View my posts</a> 
+      </li>
+
         <li class="nav-item">
           <a class="nav-link" id="view_notes" href="">Notes</a> 
         </li>
-        <li class="nav-item">
-          
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" id="find_friends" href=\people\search_people.php>Find New Friends</a> 
         </li>
         <li class="nav-item">
           <a class="nav-link" id="view_profile" href="">Profile</a> 
           </li>
-        <li class="nav-item">
-          
-        </li>
+        
         </li>
         <li class="nav-item">
           <a class="nav-link" id="my_photos" href="">Photos</a> 

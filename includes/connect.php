@@ -595,12 +595,11 @@ $results = $conn->query($sql);
         ;};}
     
       function upload_post($file_new_name,$conn,$text){
-        echo'xxx';
         $sql="INSERT into posts(user_name,post_text,post_image) values (?,?,?) ;";
         $stmt= $conn->prepare($sql);
         $stmt->bind_param("sss",$_SESSION['user'],$text,$file_new_name);
         $stmt->execute();
-        echo"<script>alert('Your post has been uploaded!');window.history.go(-2);</script>";
+        echo"<script>alert('Your post has been uploaded!');window.location.replace('/posts/view_my_posts.php');</script>";
              $conn->close();
 
       }
@@ -638,6 +637,19 @@ $friendlist=[];
         };
       }
     }}};
+
+    function veiw_my_posts($conn){
+      $sql="SELECT * from posts where user_name='".$_SESSION['user']."' ";
+      $results2 = $conn->query($sql);
+      if (!$results2) {
+        throw new Exception('there are no posts to see.');}
+        else{
+          while($row = $results2->fetch_assoc()){
+            post($conn,$row['idposts']) ;}
+     };
+
+    };
+
     function post($conn,$id){
       $sql="SELECT * from posts where idposts=$id";
       $results = $conn->query($sql); 
