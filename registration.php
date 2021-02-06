@@ -18,7 +18,7 @@ $relationship="no relationship information";
 if ($gen=="male"){$c_pic="male.png";}else{$c_pic="female.png";};
 $recov="recovery message";
 
-$conn =dataBase_connect();
+
 registration(
 $conn,$usern,$pass,$emai,$dob,$gen,$id,$first_name,$family_name,$country,$status,$posts,$p_pic,$desc_user,$relationship,$c_pic,$recov);
 

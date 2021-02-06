@@ -5,7 +5,7 @@ if (!isset($_SESSION['user'])){header('location:home.php');};
 include '../includes/connect.php';
 $note = $_POST['note'];
 $user=$_SESSION['user'];
-$conn=dataBase_connect();
+
 
 newNotes($conn,$note,$user);
 header('location:/notes/note_created.php');

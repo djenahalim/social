@@ -14,7 +14,7 @@ if (!isset($_SESSION['user'])){header('location:index.php');};
 include "../includes/connect.php";
 //include "../includes/header.php";
 
-$conn=dataBase_connect();
+
 
 findNotes($conn);
   echo"</div>";
