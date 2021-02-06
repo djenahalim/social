@@ -22,8 +22,6 @@ if (isset($_POST['submit_post'])){
        $file_new_name=uniqid('',true).".".$file_actual_ext;
        $file_destination='uploads/'.$file_new_name;
 
-      echo"<script>alert('$file_destination')
-         </script>";
 
         upload_post($file_new_name,$conn,$text);
        
